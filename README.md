@@ -4,6 +4,8 @@ An MLH Builders Week implementation of **The Veto Agent (Token Vault & Asynchron
 
 **Current verification:** 19 state-machine tests, TypeScript/Vite build and lint pass. Auth0 login was verified in the browser. Live Token Vault exchange, out-of-band CIBA approval and GitHub issue closure require tenant/account configuration and have not yet been verified. No mock approval or personal-access-token fallback is used. Do not represent this project as a completed live integration until the end-to-end flow has been verified.
 
+**Live setup blocker (2026-11-12):** the tenant dashboard disables the CIBA Email channel and labels it “Subscription add-on is required”. No paid upgrade was purchased. A dedicated `Veto CIBA Approval` application was created, but the unsaved CIBA/channel changes were discarded. [Disposable demo issue #1](https://github.com/guraove/auth0-veto-agent/issues/1) remains open. Token Vault/GitHub OAuth setup has not been completed. A Guardian push alternative would require a supported tenant configuration and the owner's explicit approval and phone enrollment.
+
 ## Run
 
 Node.js 24+, npm. Copy `.env.example` to `.env`, set your Auth0 domain, SPA client and API audience, then `npm ci` and `npm run dev`. UI: http://localhost:5173, backend: http://127.0.0.1:3001. Run `npm test`, `npm run build`, and `npm run lint`.
